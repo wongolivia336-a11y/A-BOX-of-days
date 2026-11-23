@@ -142,8 +142,9 @@ body{min-height:100vh;overflow-x:hidden;background:radial-gradient(ellipse at 50
 .phone-app-scroll{position:absolute;inset:0;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;scrollbar-width:none;border-radius:inherit;transition:filter .25s ease}
 .phone-app-scroll::-webkit-scrollbar{display:none}
 .phone-app-scroll.dialog-open{overflow:hidden}
-.phone-app-scroll>.app-shell{width:100%;max-width:none;min-height:100%;margin:0;padding:54px 0 0;background:#fff;box-shadow:none}
-.phone-app-scroll .bottom-nav{z-index:9}
+.phone-app-scroll>.app-shell{width:100%;max-width:none;min-height:100%;margin:0;padding:54px 0 0;background:#fff;box-shadow:none;display:flex;flex-direction:column}
+.phone-app-scroll>#pageContent{flex:1 0 auto;padding-bottom:88px}
+.phone-app-scroll .bottom-nav{position:sticky;bottom:0;margin-top:-78px;z-index:9;flex:0 0 78px}
 .phone-screen>.overlay-root{position:absolute;inset:0;z-index:70;align-items:flex-end;pointer-events:none}
 .phone-screen>.overlay-root:has(.sheet){pointer-events:auto}
 .phone-screen>.overlay-root .overlay-scrim{position:absolute;inset:0}
@@ -173,3 +174,8 @@ body{min-height:100vh;overflow-x:hidden;background:radial-gradient(ellipse at 50
 }
 @media(prefers-reduced-motion:reduce){.phone-device,.phone-screen,.day-island,.island-mark,.island-copy,.island-meter,.island-spark,.island-mood-dot{transition:none!important;animation:none!important}}
 
+/* V5 rendering polish: clean illustration edges and reserve a reachable footer zone. */
+.site-aside{overflow:visible}
+.site-aside img{display:block;max-width:100%;height:auto;object-fit:contain;object-position:center;opacity:.9}
+.left-aside img{width:160px}
+.right-aside img{width:150px}
